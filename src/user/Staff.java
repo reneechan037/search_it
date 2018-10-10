@@ -1,17 +1,13 @@
 package user;
 
 public class Staff implements Role{
-
+	
+	public Staff s = new Staff();
 	@Override
-	public String getRole() {
+	public Staff getRole() {
 		// TODO Auto-generated method stub
-		return null;
+		return s;
 	}
 
-	@Override
-	public void setRole() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

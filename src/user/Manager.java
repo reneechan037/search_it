@@ -1,17 +1,12 @@
 package user;
 
 public class Manager implements Role{
-
+	private Manager m = new Manager();
 	@Override
-	public String getRole() {
-		// TODO Auto-generated method stub
-		return null;
+	public Manager getRole() {
+		return m;
 	}
 
-	@Override
-	public void setRole() {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 }
