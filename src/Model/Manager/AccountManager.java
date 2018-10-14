@@ -1,5 +1,8 @@
 package Model.Manager;
 
+import Model.user.Manager;
+import Model.user.Officer;
+import Model.user.Staff;
 import Model.user.User;
 
 import java.util.ArrayList;
@@ -16,6 +19,10 @@ public class AccountManager {
     private AccountManager() {
         userList = new ArrayList<User>();
         loggedOnUserList = new ArrayList<User>();
+        User manager = new Officer("admin", "admin", "admin", new Manager());
+        User staff = new Officer("staff", "staff", "staff", new Staff());
+        userList.add(manager);
+        userList.add(staff);
     }
 
     public Response registerAccount(User user) {
@@ -23,7 +30,7 @@ public class AccountManager {
             if (curUser.userDuplicated(user))
                 return new Response(false, "User is existed");
         }
-        String userId = "AL" + userList.size();
+        String userId = "USER" + (userList.size() + 1);
         user.setU_id(userId);
         userList.add(user);
         return new Response(true, "Registration successful");
@@ -32,10 +39,20 @@ public class AccountManager {
     public Response loginAccount(String u_name, String u_pwd) {
         for(User curUser : userList) {
             if (curUser.compare(u_name, u_pwd)) {
+                loggedOnUserList.add(curUser);
                 return new Response(true, "Login successful", curUser.getU_id());
             }
         }
         return new Response(false, "Invalid username or password");
+    }
+
+    public User getUserByUserId(String u_id) {
+        for(User curUser : loggedOnUserList) {
+            if (curUser.compare(u_id)) {
+                return curUser;
+            }
+        }
+        return null;
     }
 
     public boolean userIsExisted(User user) {
