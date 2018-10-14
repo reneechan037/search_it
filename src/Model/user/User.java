@@ -1,34 +1,36 @@
-package user;
+package Model.user;
 
 import java.util.ArrayList;
 public class User {
-	private static ArrayList<User> user_list = new ArrayList();
 	private String u_id;
 	private String u_name;
 	private String u_pwd;
+
 	public User(String u_id, String u_name, String u_pwd) {
 		this.u_id = u_id;
 		this.u_name = u_name;
 		this.u_pwd = u_pwd;
 	}
-	public static User getUserByID(String uid) {
-		User result = null;
-		for(User u: getUser_list()){
-			if(u.getU_id().equals(uid)) {
-				result = u;
-			}
-		}
-		return result;
-	}
-	public static ArrayList<User> getUser_list() {
-		return user_list;
-	}
-	public static void setUser_list(ArrayList<User> user_list) {
-		User.user_list = user_list;
-	}
+
+    public User(String u_name, String u_pwd) {
+        this.u_name = u_name;
+        this.u_pwd = u_pwd;
+    }
+
 	public String getU_id() {
 		return u_id;
 	}
+
+	public boolean userDuplicated(User newUser) {
+	    return u_name.equals(newUser.u_name)?true:false;
+    }
+
+    public boolean compare(String u_name, String u_pwd) {
+	    if (this.u_name.equals(u_name) && this.u_pwd.equals(u_pwd))
+	        return true;
+	    return false;
+    }
+
 	public void setU_id(String u_id) {
 		this.u_id = u_id;
 	}
@@ -44,6 +46,4 @@ public class User {
 	public void setU_pwd(String u_pwd) {
 		this.u_pwd = u_pwd;
 	}
-	
-	
 }

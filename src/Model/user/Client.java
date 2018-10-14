@@ -1,4 +1,4 @@
-package user;
+package Model.user;
 
 public class Client extends User{
 

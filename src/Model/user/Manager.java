@@ -1,4 +1,4 @@
-package user;
+package Model.user;
 
 public class Manager implements Role{
 	private Manager m = new Manager();
