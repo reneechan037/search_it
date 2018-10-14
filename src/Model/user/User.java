@@ -26,9 +26,11 @@ public class User {
     }
 
     public boolean compare(String u_name, String u_pwd) {
-	    if (this.u_name.equals(u_name) && this.u_pwd.equals(u_pwd))
-	        return true;
-	    return false;
+	    return(this.u_name.equals(u_name) && this.u_pwd.equals(u_pwd))?true:false;
+    }
+
+    public boolean compare(String u_id) {
+        return(this.u_id.equals(u_id))?true:false;
     }
 
 	public void setU_id(String u_id) {

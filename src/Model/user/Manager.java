@@ -1,12 +1,14 @@
 package Model.user;
 
 public class Manager implements Role{
-	private Manager m = new Manager();
+	private Manager m;
 	@Override
 	public Manager getRole() {
 		return m;
 	}
 
+	public Manager() {
 
+	}
 
 }
