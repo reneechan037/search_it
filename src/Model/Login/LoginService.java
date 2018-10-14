@@ -11,11 +11,7 @@ public class LoginService {
 
     }
 
-    public Response customerLogin(String u_name, String u_pwd) {
-        return accountManager.loginAccount(u_name, u_pwd);
-    }
-
-    public Response staffLogin(String u_name, String u_pwd) {
+    public Response login(String u_name, String u_pwd) {
         return accountManager.loginAccount(u_name, u_pwd);
     }
 }
