@@ -8,6 +8,9 @@ public class ServicePlan {
     private int duration;
     private String durationUnit;
 
+    private double monthlyFee;
+    private double specialMonthlyFee;
+
     private FullSpeedShareService fullSpeedShareService;
     private AirtimeService airtimeService;
     private MessageService messageService;
@@ -42,6 +45,22 @@ public class ServicePlan {
 
     public void setDurationUnit(String durationUnit) {
         this.durationUnit = durationUnit;
+    }
+
+    public double getMonthlyFee() {
+        return monthlyFee;
+    }
+
+    public void setMonthlyFee(double monthlyFee) {
+        this.monthlyFee = monthlyFee;
+    }
+
+    public double getSpecialMonthlyFee() {
+        return specialMonthlyFee;
+    }
+
+    public void setSpecialMonthlyFee(double specialMonthlyFee) {
+        this.specialMonthlyFee = specialMonthlyFee;
     }
 
     public FullSpeedShareService getFullSpeedShareService() {
