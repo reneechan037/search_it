@@ -4,6 +4,7 @@ package Model.service_plan;
 import java.util.ArrayList;
 
 public class ServicePlan {
+    private String planId;
     private String name;
     private int duration;
     private String durationUnit;
@@ -21,6 +22,30 @@ public class ServicePlan {
 //        airtimeService = new AirtimeService();
 //        messageService = new MessageService();
 //        extraOffers = new ArrayList<>();
+    }
+
+    public String getPlanId() {
+        return planId;
+    }
+
+    public void setPlanId(String planId) {
+        this.planId = planId;
+    }
+
+    public void setFullSpeedShareService(FullSpeedShareService fullSpeedShareService) {
+        this.fullSpeedShareService = fullSpeedShareService;
+    }
+
+    public void setAirtimeService(AirtimeService airtimeService) {
+        this.airtimeService = airtimeService;
+    }
+
+    public void setMessageService(MessageService messageService) {
+        this.messageService = messageService;
+    }
+
+    public void setExtraOffers(ArrayList<ExtraOffer> extraOffers) {
+        this.extraOffers = extraOffers;
     }
 
     public String getName() {
