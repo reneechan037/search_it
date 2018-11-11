@@ -10,7 +10,7 @@ public class CmdRegisterAccount implements Command {
     }
 
     @Override
-    public void execute(String[] cmdParts) {
+    public void execute(String[] cmdParts, Scanner in) {
         RegisterService registerService = new RegisterService();
         Response response = registerService.register(cmdParts[0], cmdParts[1]);
 
