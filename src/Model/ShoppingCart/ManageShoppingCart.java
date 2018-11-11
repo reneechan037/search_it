@@ -9,7 +9,7 @@ public class ManageShoppingCart {
     private static final ManageShoppingCart instance = new ManageShoppingCart();
     private ArrayList<ShoppingCart> shoppingCartlist;
 
-    private ManageShoppingCart getinstance() {
+    public static ManageShoppingCart getinstance() {
         return instance;
     }
 
@@ -26,20 +26,25 @@ public class ManageShoppingCart {
 
     public void deleteToShoppingCart(User user, int number) {
         int num = 0;
+        boolean success=false;
         for (ShoppingCart shoppingCart : shoppingCartlist) {
             if (shoppingCart.getUser().equals(user)) {
                 num++;
             }
             if (num == number) {
                 shoppingCartlist.remove(shoppingCart);
-                System.out.println("Remove success!!");
             }
 
+        }
+        if(success){
+             System.out.println("Remove success!!");
+        }else{
+            System.out.println("No this plan");
         }
     }
 
     public void displayShoppingCart(User user) {
-        int num = 0;
+        int num = 1;
         for (ShoppingCart shoppingCart : shoppingCartlist) {
             if (shoppingCart.getUser().equals(user)) {
                 System.out.println(num + ". " + shoppingCart.getPlan().getName());
@@ -47,6 +52,9 @@ public class ManageShoppingCart {
                 System.out.println("");
                 num++;
             }
+        }
+        if(num==1){
+            System.out.println("No plan were added in the shopping cart");
         }
     }
     public void removeListByUser(User user){

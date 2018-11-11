@@ -41,13 +41,18 @@ public class SearchIt {
                     (new CmdRegisterAccount()).execute(cmdParts, in);
                 }
             } else { // user actions after login
-                System.out.println("Logout: 0 | Show all plans: 1");
+                System.out.println("Logout: 0 | Show all plans: 1 | Display Shopping Cart: 2 | Manager Action: 3 ");
                 input = in.nextLine();
                 if (input.equals("0")) {
                     //exit
                     (new CmdLogout()).execute(new String[0], in);
                 } else if (input.equals("1")) {
                     (new CmdShowAllPlans()).execute(new String[0], in);
+                }else if (input.equals("2")) {
+                    (new CmdShowShoppingCart()).execute(new String[0], in);
+                }else if (input.equals("3"))
+                {
+                    (new CmdManagerAction()).execute(new String[0], in);
                 }
             }
 
