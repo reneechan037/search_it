@@ -57,5 +57,9 @@ public class ManageShoppingCart {
         }
         
     }
+    
+    public void checkOut() {
+    	shoppingCartlist.clear();
+    }
 
 }
