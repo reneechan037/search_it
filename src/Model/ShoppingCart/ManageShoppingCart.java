@@ -9,7 +9,7 @@ public class ManageShoppingCart {
     private static final ManageShoppingCart instance = new ManageShoppingCart();
     private ArrayList<ShoppingCart> shoppingCartlist;
 
-    private ManageShoppingCart getinstance() {
+    public static ManageShoppingCart getinstance() {
         return instance;
     }
 
