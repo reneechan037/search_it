@@ -3,6 +3,7 @@ import Model.service_plan.ServicePlan;
 import Model.user.User;
 import Model.service_plan.ServicePlan;
 import java.util.ArrayList;
+import Model.Order.*;
 
 public class ManageShoppingCart {
 
@@ -66,8 +67,14 @@ public class ManageShoppingCart {
         
     }
     
-    public void checkOut() {
-    	shoppingCartlist.clear();
+    public void checkOut(User user) {
+    	if(getinstance().shoppingCartlist.size() == 0) {
+    		System.out.println("Shopping Cart is no plan!");
+    	}else {
+    		ManageOrder.getOrderinstance().addToOrderList(user, getinstance());
+        	shoppingCartlist.clear();
+        	System.out.println("Checkout success!!");
+    	}
     }
 
 }

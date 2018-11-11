@@ -20,10 +20,12 @@ public class CmdShowShoppingCart implements Command {
         boolean wantToBack = false;
         do {
              ManageShoppingCart.getinstance().displayShoppingCart(Cache.getInstance().getUser());
-            System.out.println("Back: 0 | Enter Shopping Cart id to delete plan: ");
+            System.out.println("Back: 0 | Checkout: c | Shopping Cart id to delete plan: ");
             input = in.nextLine();
             if (input.equals("0")){
                 wantToBack = true;
+            } else if(input.equals("c")){
+            	(new CmdCheckout()).execute(new String[0], in);
             } else {
                  ManageShoppingCart.getinstance().deleteToShoppingCart(Cache.getInstance().getUser(),Integer.parseInt(input));
             }
