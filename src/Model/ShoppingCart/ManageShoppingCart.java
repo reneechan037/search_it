@@ -53,7 +53,7 @@ public class ManageShoppingCart {
                 num++;
             }
         }
-        if(num==0){
+        if(num==1){
             System.out.println("No plan were added in the shopping cart");
         }
     }
