@@ -44,7 +44,7 @@ public class ManageShoppingCart {
     }
 
     public void displayShoppingCart(User user) {
-        int num = 0;
+        int num = 1;
         for (ShoppingCart shoppingCart : shoppingCartlist) {
             if (shoppingCart.getUser().equals(user)) {
                 System.out.println(num + ". " + shoppingCart.getPlan().getName());
