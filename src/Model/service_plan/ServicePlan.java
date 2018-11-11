@@ -17,15 +17,65 @@ public class ServicePlan {
     private MessageService messageService;
     private ArrayList<ExtraOffer> extraOffers;
 
+    private int planType;
+    private int [] specialFeeMonth;
+
     public ServicePlan() {
-//        fullSpeedShareService = new FullSpeedShareService();
-//        airtimeService = new AirtimeService();
-//        messageService = new MessageService();
+    //    fullSpeedShareService = new FullSpeedShareService();
+    //    airtimeService = new AirtimeService();
+    //    messageService = new MessageService();
 //        extraOffers = new ArrayList<>();
+    }
+
+    public ServicePlan(String pId, String name, double monthFee, double specialMonthFee, int[] specialMonth, int duration, String unit, int type)
+    {
+        this.planId = pId;
+        this.name = name;
+        this.monthlyFee = monthFee;
+        this.specialMonthlyFee = specialMonthFee;
+        this.specialFeeMonth = specialMonth;
+        this.duration = duration;
+        this.durationUnit = unit;
+
+        setPlanType(type);
+
+    }
+
+    public void setPlanType(int type)
+    {
+        switch(type)
+        {
+            case 1:
+                fullSpeedShareService = new FullSpeedShareService();
+                break;
+            case 2:
+                airtimeService = new AirtimeService();
+                break;
+            case 3: 
+                messageService = new MessageService();
+                break;
+            default:
+                fullSpeedShareService = new FullSpeedShareService();
+        }
+    }
+
+    public int getPlanType()
+    {
+        return planType;
+    }
+
+    public int [] getSpecialMonth()
+    {
+        return specialFeeMonth;
     }
 
     public String getPlanId() {
         return planId;
+    }
+
+    public void setSpecialMonth(int [] months)
+    {
+        this.specialFeeMonth = months;
     }
 
     public void setPlanId(String planId) {
