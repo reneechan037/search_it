@@ -1,5 +1,6 @@
 package Model.Manager;
 
+import Model.Cache.Cache;
 import Model.user.Manager;
 import Model.user.Officer;
 import Model.user.Staff;
@@ -17,8 +18,8 @@ public class AccountManager {
     }
 
     private AccountManager() {
-        userList = new ArrayList<User>();
-        loggedOnUserList = new ArrayList<User>();
+        userList = new ArrayList<>();
+        loggedOnUserList = new ArrayList<>();
         User manager = new Officer("admin", "admin", "admin", new Manager());
         User staff = new Officer("staff", "staff", "staff", new Staff());
         userList.add(manager);
@@ -46,6 +47,11 @@ public class AccountManager {
         return new Response(false, "Invalid username or password");
     }
 
+    public Response logoutAccount(User user) {
+        loggedOnUserList.remove(user);
+        return new Response(true, "Logout successful");
+    }
+
     public User getUserByUserId(String u_id) {
         for(User curUser : loggedOnUserList) {
             if (curUser.compare(u_id)) {
@@ -53,9 +59,5 @@ public class AccountManager {
             }
         }
         return null;
-    }
-
-    public boolean userIsExisted(User user) {
-        return userList.contains(user)?true:false;
     }
 }

@@ -15,7 +15,7 @@ public class CmdLogin implements Command {
     }
 
     @Override
-    public void execute(String[] cmdParts) {
+    public void execute(String[] cmdParts, Scanner in) {
         LoginService loginService = new LoginService();
         Response response = loginService.login(cmdParts[0], cmdParts[1]);
 

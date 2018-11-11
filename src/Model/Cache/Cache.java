@@ -15,10 +15,14 @@ public class Cache {
     }
 
     public void setUser(User user) {
-
+        this.user = user;
     }
 
     public User getUser() {
         return user;
+    }
+
+    public boolean isLoggedIn() {
+        return this.user != null;
     }
 }
