@@ -48,6 +48,9 @@ public class ManageShoppingCart {
                 num++;
             }
         }
+        if(num==0){
+            System.out.println("No plan were added in the shopping cart");
+        }
     }
     public void removeListByUser(User user){
         for (ShoppingCart shoppingCart : shoppingCartlist) {
