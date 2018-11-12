@@ -56,7 +56,6 @@ public class Manager extends User implements Role{
 			ArrayList<ServicePlan> plans = ServicePlanStorage.getInstance().getPlans();
 			int index = plans.indexOf(oldPlan);
 			plans.set(index, newPlan);
-			System.out.print("asdadasdasds"+plans.size());
 			return true;
 		} catch (Exception e) {
 			//TODO: handle exception

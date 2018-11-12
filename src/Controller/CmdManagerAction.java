@@ -207,9 +207,12 @@ public class CmdManagerAction implements Command {
             }
 
             ServicePlan newPlan = new ServicePlan(planId, newTitle, newMonthFee, newSpecialFee, newSpecialMonth, newDuration, newUnit, newPlanType);
-            manager.updatePlan(oldPlan, newPlan);
+            boolean isSuccess = manager.updatePlan(oldPlan, newPlan);
 
-            println("Plan Updated!\n\n\n\n");
+           if (isSuccess)
+                println("Plan Updated!\n\n\n\n");
+            else
+            println("Plan Update fail!\n\n\n\n");
         }
     };
 
