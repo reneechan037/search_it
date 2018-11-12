@@ -41,23 +41,52 @@ public class SearchIt {
                     (new CmdRegisterAccount()).execute(cmdParts, in);
                 }
             } else { // user actions after login
-                System.out.println("Logout: 0 | Show all plans: 1 | Display Shopping Cart: 2 | Manager Action: 3 | Show Order: 4 ");
-                input = in.nextLine();
-                if (input.equals("0")) {
-                    //exit
-                    (new CmdLogout()).execute(new String[0], in);
-                } else if (input.equals("1")) {
-                    (new CmdShowAllPlans()).execute(new String[0], in);
-                }else if (input.equals("2")) {
-                    (new CmdShowShoppingCart()).execute(new String[0], in);
-                }else if (input.equals("3"))
+                if (Cache.getInstance().getUser().getU_id().equals("admin"))
                 {
-                    (new CmdManagerAction()).execute(new String[0], in);
-                }else if(input.equals("4")) {
-                	(new CmdShowOrder()).execute(new String[0], in);
+                    //admin action
+                    displayAdminActions(in);
+                }
+                else
+                {
+                    //staff action
+                    displayStaffActions(in);
                 }
             }
 
         }while(true);
+    }
+
+    public static void displayAdminActions(Scanner in)
+    {
+        System.out.println("Logout: 0 | Show all plans: 1 | Display Shopping Cart: 2 |  Show Order: 3 | Manager Action: 4");
+        String input = in.nextLine();
+        if (input.equals("0")) {
+            //exit
+            (new CmdLogout()).execute(new String[0], in);
+        } else if (input.equals("1")) {
+            (new CmdShowAllPlans()).execute(new String[0], in);
+        }else if (input.equals("2")) {
+            (new CmdShowShoppingCart()).execute(new String[0], in);
+        }else if (input.equals("3")){
+            (new CmdShowOrder()).execute(new String[0], in);
+        }else if(input.equals("4")) {
+            (new CmdManagerAction()).execute(new String[0], in);
+        }
+    }
+
+    public static void displayStaffActions(Scanner in)
+    {
+        System.out.println("Logout: 0 | Show all plans: 1 | Display Shopping Cart: 2 |  Show Order: 3 ");
+        String input = in.nextLine();
+        if (input.equals("0")) {
+            //exit
+            (new CmdLogout()).execute(new String[0], in);
+        } else if (input.equals("1")) {
+            (new CmdShowAllPlans()).execute(new String[0], in);
+        }else if (input.equals("2")) {
+            (new CmdShowShoppingCart()).execute(new String[0], in);
+        }else if(input.equals("3")) {
+            (new CmdShowOrder()).execute(new String[0], in);
+        }
     }
 }

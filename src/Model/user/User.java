@@ -15,11 +15,14 @@ public class User {
     public User(String u_name, String u_pwd) {
         this.u_name = u_name;
         this.u_pwd = u_pwd;
-    }
+	}
+	
+	public User(){}
 
 	public String getU_id() {
 		return u_id;
 	}
+	
 
 	public boolean userDuplicated(User newUser) {
 	    return u_name.equals(newUser.u_name)?true:false;

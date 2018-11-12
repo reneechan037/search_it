@@ -59,6 +59,14 @@ public class ServicePlan {
         }
     }
 
+    @Override
+    public String toString()
+    {
+        return String.format("Plan Id:%s\nPlan name:%s\nMonthly fee:%d\nSpecial monthly fee:%d\nMonths for special fee:%s\nPlan duration:%d %s\n", 
+                            planId,name,monthlyFee,specialMonthlyFee,specialFeeMonth.toString(),duration,durationUnit);
+
+    }
+
     public int getPlanType()
     {
         return planType;

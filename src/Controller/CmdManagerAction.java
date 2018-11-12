@@ -4,13 +4,17 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import Model.Cache.Cache;
 import Model.Login.SearchingService;
 import Model.Manager.Response;
 import Model.service_plan.ServicePlan;
 import Model.user.Manager;
 
 public class CmdManagerAction implements Command {
+   private Manager manager;
+
     public CmdManagerAction() {
+        manager = Manager.getInstance();
     }
 
     @Override
@@ -18,29 +22,38 @@ public class CmdManagerAction implements Command {
         String cmd = "";
         boolean isExit = false;
 
+
         /**
          * 
          * full speed share service: 1 air time service: 2 message service: 3
          */
 
-        do {
+        while(!isExit) {
             println("0: Exit | 1: add service plan | 2: update service plan | 3: delete service plan | 4: check user plan");
             cmd = in.nextLine();
             if (cmd.equals("0")) {
                 isExit = true;
             } else if (cmd.equals("1")) {
                 addPlan(in);
+                isExit = true;
+                break;
             } else if (cmd.equals("2")) {
                 updatePlan(in);
+                isExit = true;
+                break;
             } else if (cmd.equals("3")) {
                 deletePlan(in);
+                isExit = true;
+                break;
             } else if (cmd.equals("4")) {
                 checkUserPlan(in);
+                isExit = true;
+                break;
             } else {
                 System.out.println("Please choose follow action command !!");
 
             }
-        } while (!isExit);
+        };
     }
 
     public void addPlan(Scanner in) {
@@ -98,13 +111,14 @@ public class CmdManagerAction implements Command {
         print("\nSet plan duration (enter integer):");
         duration = in.nextInt();
 
-        boolean isSuccess = Manager.getInstance().addPlan(
-                new ServicePlan(planId, title, monthlyFee, specialFee, specialMonth, duration, unit, planType));
+        boolean isSuccess = manager.addPlan(
+                new ServicePlan(planId, title, monthlyFee, specialFee, specialMonth, duration, unit, planType)
+            );
 
         if (isSuccess)
-            println("Plan added !");
+            println("Plan added !\n\n\n\n");
         else
-            println("Add plan fail !");
+            println("Add plan fail !\n\n\n\\n");
     };
 
     public void updatePlan(Scanner in) {
@@ -120,9 +134,8 @@ public class CmdManagerAction implements Command {
             planId = oldPlan.getPlanId();
             println("Update plan type - 1: Full speed share service | 2: Air time service | 3: Message service | s: skip ");
             String cmd = in.nextLine();
-
+            int newPlanType = -1;
             if (!isSkipt(cmd)) {
-                int newPlanType = -1;
                 switch (cmd) {
                     case "1":
                     case "2":
@@ -193,7 +206,10 @@ public class CmdManagerAction implements Command {
                 oldPlan.setDuration(newDuration);
             }
 
-            println("Plan Updated!");
+            ServicePlan newPlan = new ServicePlan(planId, newTitle, newMonthFee, newSpecialFee, newSpecialMonth, newDuration, newUnit, newPlanType);
+            manager.updatePlan(oldPlan, newPlan);
+
+            println("Plan Updated!\n\n\n\n");
         }
     };
 
@@ -201,11 +217,11 @@ public class CmdManagerAction implements Command {
         print("\nEnter plan id:");
         String planId = in.nextLine();
 
-        boolean isSuucess = Manager.getInstance().deletePlan(planId);
+        boolean isSuucess = manager.deletePlan(planId);
         if (isSuucess) {
-            println("Update success !!");
+            println("Update success !!\n\n\n");
         } else {
-            println("Update fail !!");
+            println("Update fail !!\n\n\n");
         }
 
     };
