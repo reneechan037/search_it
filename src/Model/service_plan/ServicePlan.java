@@ -2,6 +2,7 @@ package Model.service_plan;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ServicePlan {
     private String planId;
@@ -36,7 +37,7 @@ public class ServicePlan {
         this.specialFeeMonth = specialMonth;
         this.duration = duration;
         this.durationUnit = unit;
-
+        this.planType = type;
         setPlanType(type);
 
     }
@@ -62,9 +63,8 @@ public class ServicePlan {
     @Override
     public String toString()
     {
-        return String.format("Plan Id:%s\nPlan name:%s\nMonthly fee:%d\nSpecial monthly fee:%d\nMonths for special fee:%s\nPlan duration:%d %s\n", 
-                            planId,name,monthlyFee,specialMonthlyFee,specialFeeMonth.toString(),duration,durationUnit);
-
+        return String.format("Plan Id:%s\nPlan Type:%d\nPlan name:%s\nMonthly fee:%f\nSpecial monthly fee:%f\nMonths for special fee:%s\nPlan duration:%d %s\n", 
+                            planId,planType,name,monthlyFee,specialMonthlyFee,Arrays.toString(specialFeeMonth),duration,durationUnit);
     }
 
     public int getPlanType()
