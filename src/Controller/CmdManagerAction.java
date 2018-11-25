@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import Helper.Helper;
 import Model.Cache.Cache;
 import Model.Login.SearchingService;
 import Model.Manager.Response;
@@ -28,38 +29,42 @@ public class CmdManagerAction implements Command {
          * full speed share service: 1 air time service: 2 message service: 3
          */
 
+        println(Helper.seperateStyleString("Manager Action"));
         while(!isExit) {
-            println("0: Exit | 1: add service plan | 2: update service plan | 3: delete service plan | 4: check user plan");
+            println("\n0: Exit | 1: Add service plan | 2: Update service plan | 3: Delete service plan | 4: Check user plan");
             cmd = in.nextLine();
             if (cmd.equals("0")) {
                 isExit = true;
             } else if (cmd.equals("1")) {
                 addPlan(in);
-                isExit = true;
-                break;
+                // isExit = true;
+                // break;
             } else if (cmd.equals("2")) {
                 updatePlan(in);
-                isExit = true;
-                break;
+                // isExit = true;
+                // break;
             } else if (cmd.equals("3")) {
                 deletePlan(in);
-                isExit = true;
-                break;
+                // isExit = true;
+                // break;
             } else if (cmd.equals("4")) {
                 checkUserPlan(in);
-                isExit = true;
-                break;
+                // isExit = true;
+                // break;
             } else {
-                System.out.println("Please choose follow action command !!");
+                System.out.println("\nPlease choose follow action command !!");
 
             }
         };
     }
 
+
     public void addPlan(Scanner in) {
+        println(Helper.seperateStyleString("Add Service Plan Mode"));
+
         String title, unit;
-        int monthlyFee = -1;
-        int specialFee = -1;
+        double monthlyFee = 0.0;
+        double specialFee = 0.0;
         int duration = -1;
         int[] specialMonth = null;
 
@@ -71,148 +76,289 @@ public class CmdManagerAction implements Command {
         println("Select plan type - 1: Full speed share service | 2: Air time service | 3: Message service | 0: Exit");
         cmd = in.nextLine();
 
-        switch (cmd) {
-        case "1":
-        case "2":
-        case "3":
-            planType = Integer.parseInt(cmd);
-            break;
-        default:
-            break;
+        if (cmd.equals("0")) return;
 
+        if (cmd.equals("1") || cmd.equals("2") || cmd.equals("3"))
+        {
+            planType = Integer.parseInt(cmd);
+        }
+        else
+        {
+            println("Invalid plan type");
+            return;
         }
 
         print("Set plan title:");
         title = in.nextLine();
+        if (title.isEmpty())
+        {
+            println("Invalid title name");
+        }
 
-        print("\nSet monthly fee:");
-        monthlyFee = Integer.parseInt(in.nextLine());
-
-        print("\nSet special monthly fee ?(y/n)");
+        print("Set monthly fee:");
         cmd = in.nextLine();
-        if (cmd.equals("y")) {
-            print("\nSet special monthly fee:");
-            specialFee = Integer.parseInt(in.nextLine());
+        if (Helper.isDouble(cmd))
+        {
+            monthlyFee = Double.parseDouble(cmd);
+        }
+        else
+        {
+            println("Invalid month fee");
+            return;
+        }
 
-            print("\nSet special month for special fee (from 1-12, seperate by ,):");
-            String monthStr = in.nextLine();
-            if (!monthStr.isEmpty()) {
-                String[] months = monthStr.split(",");
-                specialMonth = new int[months.length];
-                for (int i = 0; i < months.length; i++) {
-                    specialMonth[i] = Integer.parseInt(months[i]);
+        print("Set special monthly fee?(Yes/No)");
+        cmd = in.nextLine();
+        if (cmd.equals("y") || cmd.equals("yes")) 
+        {
+            print("Set special monthly fee:");
+            cmd = in.nextLine();
+            if (Helper.isDouble(cmd))
+            {
+                specialFee = Double.parseDouble(cmd);
+
+                print("Set special month for special fee (from 1-12 seperate by ','):");
+                String monthStr = in.nextLine();
+                if (!monthStr.isEmpty()) 
+                {
+                    String[] months = monthStr.split(",");
+                    specialMonth = new int[months.length];
+                    for (int i = 0; i < months.length; i++) {
+                        if (Helper.isNumber(months[i]))
+                        {
+                            specialMonth[i] = Integer.parseInt(months[i]);
+
+                            if(specialMonth[i] > 12 || specialMonth[i] < 1)
+                            {
+                                println("The month range should between 1 - 12");
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            println("Invalid special months");
+                            return;
+                        }
+                    }
                 }
+            }
+            else
+            {
+                println("Invalid special monthly fee");
+                return;
             }
         }
 
-        print("\nSet duration unit (year/month):");
-        unit = in.nextLine();
+        print("Set duration unit (Year/Month):");
+        cmd = in.nextLine().toLowerCase();
+        if (cmd.equals("year") || cmd.equals("month"))
+        {
+            unit = cmd;
+        }
+        else
+        {
+            println("Invalid duration unit");
+            return;
+        }
 
-        print("\nSet plan duration (enter integer):");
-        duration = in.nextInt();
+        print("Set plan duration (a digital number is requried):");
+        cmd = in.nextLine();
+        if (Helper.isNumber(cmd))
+        {
+            duration = Integer.parseInt(cmd);
+            if (duration <= 0)
+            {
+                println("Invalid duration number");
+                return;
+            }
+        }
+        else
+        {
+            println("Invalid duration number");
+            return;
+        }
 
-        boolean isSuccess = manager.addPlan(
-                new ServicePlan(planId, title, monthlyFee, specialFee, specialMonth, duration, unit, planType)
-            );
+        ServicePlan newPlan = new ServicePlan(planId, title, monthlyFee, specialFee, specialMonth, duration, unit, planType);
+        boolean isSuccess = manager.addPlan(newPlan);
 
         if (isSuccess)
-            println("Plan added !\n\n\n\n");
+        {
+            println("\nService Plan Info:");
+            println(newPlan.toString());
+            println(Helper.seperateStyleString("Service Plan Added"));
+        }
         else
-            println("Add plan fail !\n\n\n\\n");
+        {
+            println("Add Service Plan Fail");
+        }
     };
 
     public void updatePlan(Scanner in) {
+        println(Helper.seperateStyleString("Update Service Plan Mode"));
         SearchingService service = new SearchingService();
 
         print("\nEnter plan id:");
         String planId = in.nextLine();
         ServicePlan oldPlan = service.getPlanById(planId).getServicePlan();
-        if (oldPlan == null) {
+        if (oldPlan == null) 
+        {
             println("Plan not found");
-        } else {
+            return;
+        } 
+        else 
+        {
 
             planId = oldPlan.getPlanId();
-            println("Update plan type - 1: Full speed share service | 2: Air time service | 3: Message service | s: skip ");
+            println("\nUpdate plan type - 1: Full speed share service | 2: Air time service | 3: Message service (Press S to Skip)");
             String cmd = in.nextLine();
             int newPlanType = -1;
-            if (!isSkipt(cmd)) {
-                switch (cmd) {
-                    case "1":
-                    case "2":
-                    case "3":
-                        newPlanType = Integer.parseInt(cmd);
-                        break;
-                    default:
-                        break;
-    
-                    }
-                oldPlan.setPlanType(newPlanType);
+            if (!isSkip(cmd)) 
+            {
+                if (cmd.equals("1") || cmd.equals("2") || cmd.equals("3"))
+                {
+                    newPlanType = Integer.parseInt(cmd);
+                    // oldPlan.setPlanType(newPlanType);
+                }
+                else
+                {
+                    println("Invalid plan type");
+                    return;
+                }
             }
 
-            print("Update plan title(enter s to skip):");
+            print("Update plan title (Press S to Skip): ");
             cmd = in.nextLine();
             String newTitle = "";
-            if (!isSkipt(cmd)) {
+            if (!isSkip(cmd)) 
+            {
+                if (cmd.isEmpty())
+                {
+                    println("Invalid title name");
+                    return;
+                }
                 newTitle = cmd;
-                oldPlan.setName(newTitle);
+                // oldPlan.setName(newTitle);
             }
 
             double newMonthFee = -1;
-
-            print("\nUpdate monthly fee(enter s to skip):");
+            print("Update monthly fee (Press S to Skip): ");
             cmd = in.nextLine();
-            if (!isSkipt(cmd)) {
-                newMonthFee = Double.parseDouble(cmd);
-                oldPlan.setMonthlyFee(newMonthFee);
+            if (!isSkip(cmd)) 
+            {
+                if (Helper.isDouble(cmd))
+                {
+                    newMonthFee = Double.parseDouble(cmd);
+                    // oldPlan.setMonthlyFee(newMonthFee);
+                }
+                else
+                {
+                    println("Invalid monthly fee");
+                    return;
+                }
             }
 
             double newSpecialFee = -1;
-            print("\nUpdate special monthly fee(enter s to skip):");
+            print("Update special monthly fee (Press S to Skip): ");
             cmd = in.nextLine();
-            if (!isSkipt(cmd)) {
-                newSpecialFee = oldPlan.getSpecialMonthlyFee();
-                oldPlan.setSpecialMonthlyFee(newSpecialFee);
+            if (!isSkip(cmd)) 
+            {
+                if (Helper.isDouble(cmd))
+                {
+                    newSpecialFee = oldPlan.getSpecialMonthlyFee();
+                    // oldPlan.setSpecialMonthlyFee(newSpecialFee);
+                }
+                else
+                {
+                    println("Invalid special monthly fee");
+                    return;
+                }
             }
 
-            print("\nUpdate special month for special fee (enter s to skip ,from 1-12, seperate by ','):");
+            print("Update special months for special fee (from 1-12 seperate by ',', Press S to Skip):");
             cmd = in.nextLine();
             int[] newSpecialMonth = null;
-            if (!isSkipt(cmd)) {
-                String monthStr = in.nextLine();
-                if (!monthStr.isEmpty()) {
-                    String[] months = monthStr.split(",");
+            if (!isSkip(cmd)) 
+            {
+                if (!cmd.isEmpty()) 
+                {
+                    String[] months = cmd.split(",");
                     newSpecialMonth = new int[months.length];
-                    for (int i = 0; i < months.length; i++) {
-                        newSpecialMonth[i] = Integer.parseInt(months[i]);
-                    }
-                }
+                    for (int i = 0; i < months.length; i++) 
+                    {
+                        if (Helper.isNumber(months[i]))
+                        {
+                            newSpecialMonth[i] = Integer.parseInt(months[i]);
 
-                oldPlan.setSpecialMonth(newSpecialMonth);
+                            if(newSpecialMonth[i] > 12 || newSpecialMonth[i] < 1)
+                            {
+                                println("The month range should between 1 - 12");
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            println("Invalid special months");
+                            return;
+                        }
+                        
+                    }
+
+                    // oldPlan.setSpecialMonth(newSpecialMonth);
+                }
+                else
+                {
+                    println("Invalid special months");
+                    return;
+                }
             }
 
-            print("\nUpdate duration unit (year/month, enter s to skip):");
+            print("Update duration unit (Year/Month, Press S to Skip):");
             cmd = in.nextLine();
             String newUnit = "";
-            if (!isSkipt(cmd)) {
-                newUnit = oldPlan.getDurationUnit();
-                oldPlan.setDurationUnit(newUnit);
+            if (!isSkip(cmd)) 
+            {
+                if (cmd.equals("year") || cmd.equals("month"))
+                {
+                    newUnit = oldPlan.getDurationUnit();
+                    // oldPlan.setDurationUnit(newUnit);
+                }
+                else
+                {
+                    println("Invalid duration unit");
+                    return;
+                }
             }
 
-            print("\nUpdate plan duration (enter integer, enter s to skip):");
+            print("Update plan duration (a digital number is requried, Press S to Skip):");
             cmd = in.nextLine();
             int newDuration = -1;
-            if (!isSkipt(cmd)) {
-                newDuration = Integer.parseInt(cmd);
-                oldPlan.setDuration(newDuration);
+            if (!isSkip(cmd)) 
+            {
+                if (Helper.isNumber(cmd))
+                {
+                    newDuration = Integer.parseInt(cmd);
+                    // oldPlan.setDuration(newDuration);
+                }
+                else
+                {
+                    println("Invalid duration number");
+                    return;
+                }
             }
 
             ServicePlan newPlan = new ServicePlan(planId, newTitle, newMonthFee, newSpecialFee, newSpecialMonth, newDuration, newUnit, newPlanType);
             boolean isSuccess = manager.updatePlan(oldPlan, newPlan);
 
-           if (isSuccess)
-                println("Plan Updated!\n\n\n\n");
+            if (isSuccess)
+            {
+                println("\nUpdated Plan Info:");
+                println(newPlan.toString());
+                println(Helper.seperateStyleString("Pland Updated"));
+            }
             else
-            println("Plan Update fail!\n\n\n\n");
+            {
+                println("Plan Update Fail");
+            }
         }
     };
 
@@ -221,10 +367,14 @@ public class CmdManagerAction implements Command {
         String planId = in.nextLine();
 
         boolean isSuucess = manager.deletePlan(planId);
-        if (isSuucess) {
-            println("Update success !!\n\n\n");
-        } else {
-            println("Update fail !!\n\n\n");
+
+        if (isSuucess)
+        {
+            println(Helper.seperateStyleString("Plan Deleted"));
+        }
+        else
+        {
+            println("Plan Delete Fail");
         }
 
     };
@@ -246,7 +396,7 @@ public class CmdManagerAction implements Command {
         return "P" + new Random().nextInt(max) + min;
     }
 
-    public boolean isSkipt(String str) {
-        return str.equals("s");
+    public boolean isSkip(String str) {
+        return str.toLowerCase().equals("s");
     }
 }
