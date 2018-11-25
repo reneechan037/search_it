@@ -6,15 +6,14 @@ import Model.Login.SearchingService;
 import Model.service_plan.ServicePlan;
 import Model.service_plan.ServicePlanStorage;
 
-public class Manager extends User implements Role{
+public class Manager extends Officer implements Role{
 	private static final Manager instance = new Manager();
 
-	private Manager m;
 	private SearchingService searchService;
 
 	public Manager(String u_id, String u_name, String u_pwd)
 	{
-		super(u_id, u_name, u_pwd);
+		super(u_id, u_name, u_pwd, instance);
 		this.searchService = new SearchingService();
 	}
 
@@ -31,7 +30,7 @@ public class Manager extends User implements Role{
 
 	@Override
 	public Manager getRole() {
-		return m;
+		return instance;
 	}
 
 

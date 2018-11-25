@@ -7,4 +7,6 @@ public class Officer extends User{
 		this.r = r;
 	}
 
+	public Officer(){}
+
 }
