@@ -34,6 +34,8 @@ public class ManageShoppingCart {
             }
             if (num == number) {
                 shoppingCartlist.remove(shoppingCart);
+                success=true;
+                break;
             }
 
         }
