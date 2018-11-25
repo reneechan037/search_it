@@ -2,13 +2,46 @@ import Controller.*;
 import Model.Register.RegisterService;
 import Model.Cache.Cache;
 
+import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import org.json.simple.JSONObject;
+import org.json.simple.JSONArray;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import Model.service_plan.*;
+import Model.user.*;
 
 public class SearchIt {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String input;
 
+        Officer o = new Officer("admin1","admin","admin",new Manager());
+        JSONParser p = new JSONParser();
+        ArrayList<ServicePlan> spal = new ArrayList();
+        
+        try {
+        	Object obj = p.parse(new FileReader("./src/PlanData.json"));
+        	JSONObject jo = (JSONObject) obj;
+        	JSONArray jarray = (JSONArray)jo.get("servicePlan");
+        	System.out.println(jarray.size());
+        	ServicePlan sp;
+        	for(int i = 0 ; i < jarray.size() ; i++){
+        		JSONObject innobj = (JSONObject)jarray.get(i);
+        		System.out.println(innobj);
+        		System.out.println(innobj.get("specialMonth"));
+        		new ServicePlan("a","b",0.0,0.0,new int[] {1,2,3},0,"c",0);
+//        		 sp= new ServicePlan((String)innobj.get("planId"),(String)innobj.get("title"),(double)innobj.get("monthFee"),(double)innobj.get("specialMonthlyFee"),new int[] {1,2,3},5,(String)"oo",(int)innobj.get("type"));
+//        		System.out.println(sp);
+//        	    ServicePlan sp = new ServicePlan((String)innobj.get("planId"),(String)innobj.get("title"),(double)innobj.get("monthFee"),(double)innobj.get("specialMonthlyFee"),(int[])innobj.get("specialMonth"),0,(String)"oo",(int)innobj.get("type"));
+//        	    spal.add(sp);
+        	}
+//        	ServicePlanStorage.getInstance().setPlans(spal);
+        }catch(Exception e) {
+        	System.out.println(e.getMessage());
+        }
         opening();
 
         do {
