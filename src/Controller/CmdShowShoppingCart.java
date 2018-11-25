@@ -27,7 +27,12 @@ public class CmdShowShoppingCart implements Command {
             } else if(input.equals("c")){
             	(new CmdCheckout()).execute(new String[0], in);
             } else {
+                try{
                  ManageShoppingCart.getinstance().deleteToShoppingCart(Cache.getInstance().getUser(),Integer.parseInt(input));
+                }
+                catch(Exception e){
+                    System.out.println("Please Input Shopping Cart id");
+                }
             }
         } while (!wantToBack);
     }
