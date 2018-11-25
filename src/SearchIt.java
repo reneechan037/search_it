@@ -19,29 +19,8 @@ public class SearchIt {
         String input;
 
         Officer o = new Officer("admin1","admin","admin",new Manager());
-        JSONParser p = new JSONParser();
-        ArrayList<ServicePlan> spal = new ArrayList();
-        
-        try {
-        	Object obj = p.parse(new FileReader("./src/PlanData.json"));
-        	JSONObject jo = (JSONObject) obj;
-        	JSONArray jarray = (JSONArray)jo.get("servicePlan");
-        	System.out.println(jarray.size());
-        	ServicePlan sp;
-        	for(int i = 0 ; i < jarray.size() ; i++){
-        		JSONObject innobj = (JSONObject)jarray.get(i);
-        		System.out.println(innobj);
-        		System.out.println(innobj.get("specialMonth"));
-        		new ServicePlan("a","b",0.0,0.0,new int[] {1,2,3},0,"c",0);
-//        		 sp= new ServicePlan((String)innobj.get("planId"),(String)innobj.get("title"),(double)innobj.get("monthFee"),(double)innobj.get("specialMonthlyFee"),new int[] {1,2,3},5,(String)"oo",(int)innobj.get("type"));
-//        		System.out.println(sp);
-//        	    ServicePlan sp = new ServicePlan((String)innobj.get("planId"),(String)innobj.get("title"),(double)innobj.get("monthFee"),(double)innobj.get("specialMonthlyFee"),(int[])innobj.get("specialMonth"),0,(String)"oo",(int)innobj.get("type"));
-//        	    spal.add(sp);
-        	}
-//        	ServicePlanStorage.getInstance().setPlans(spal);
-        }catch(Exception e) {
-        	System.out.println(e.getMessage());
-        }
+
+        importPLan();
         opening();
 
         do {
@@ -147,5 +126,28 @@ public class SearchIt {
         System.out.println("                   |_|                     ");
         System.out.println();     
 
-    };
+    }
+    public static void importPLan() {
+    	ArrayList<ServicePlan> spal = new ArrayList();       
+        try {
+            JSONParser p = new JSONParser();
+        	Object obj = p.parse(new FileReader("./src/PlanData.json"));
+        	JSONObject jo = (JSONObject) obj;
+        	JSONArray jarray = (JSONArray)jo.get("servicePlan");
+        	ServicePlan sp;
+        	for(int i = 0 ; i < jarray.size() ; i++){
+        		JSONObject innobj = (JSONObject)jarray.get(i);
+        		JSONArray sm = (JSONArray)innobj.get("specialMonth");
+        		int[] sma = new int[sm.size()];
+        		for (int i2 = 0; i2 < sm.size(); ++i2) {
+        			sma[i2] = (int)(((Long)sm.get(i2)).intValue());
+        		}
+        	    sp = new ServicePlan((String)innobj.get("planId"),(String)innobj.get("title"),(double)innobj.get("monthlyFee"),(double)innobj.get("specialMonthlyFee"),sma,(int)(((Long)innobj.get("duration")).intValue()),(String)innobj.get("unit"),(int)(((Long)innobj.get("type")).intValue()));
+        	    spal.add(sp);
+        	}
+        	ServicePlanStorage.getInstance().setPlans(spal);
+        }catch(Exception e) {
+        	System.out.println(e.getMessage());
+        }
+    }
 }

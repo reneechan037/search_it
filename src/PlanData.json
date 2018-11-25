@@ -3,71 +3,85 @@
     "servicePlan": [
         {
             "planId": "P001",
-            "monthlyFee": 120,
-            "specialMonthlyFee": 80,
+            "monthlyFee": 120.00,
+            "specialMonthlyFee": 80.00,
             "specialMonth": [1,3,4],
             "title": "4G Supreme Service plan",
             "desc": "Maximum local data transmission speed at 21Mbps, 3,000 minutes of local voice calls",
+            "duration": 2,
+            "unit":"24 months",
             "type": 1
         },
 
         {
             "planId": "P002",
-            "monthlyFee": 108,
-            "specialMonthlyFee": 0,
+            "monthlyFee": 108.00,
+            "specialMonthlyFee": 0.00,
             "specialMonth": [],
             "title": "4G Anytime+ Service plan",
             "desc": "Port-in users enjoy 5GB data usage, up to 21Mbps, 128kbps thereafter, 3,000 minutes of local voice calls",
+            "duration": 1,
+            "unit":"12 months",
             "type": 1
         },
 
         {
             "planId": "P003",
-            "monthlyFee": 100,
-            "specialMonthlyFee": 75,
+            "monthlyFee": 100.00,
+            "specialMonthlyFee": 75.00,
             "specialMonth": [10,12],
             "title": "4G Anytime Service plan",
             "desc": "Up to 384kbps for the first 2GB, 128kbps thereafter, 2,000 minutes of local voice calls",
+            "duration": 2,
+            "unit":"24 months",
             "type": 2
         },
 
         {
             "planId": "P004",
-            "monthlyFee": 178,
-            "specialMonthlyFee": 150,
+            "monthlyFee": 178.00,
+            "specialMonthlyFee": 150.00,
             "specialMonth": [2,3,4,5,6,7,10],
             "title": "4G Easy Connect Service plans",
             "desc": "Features 3 options: 1GB/3GB/6GB, Port-in users entitled to an extra 1GB per month, Up to 42Mbps",
+            "duration": 1,
+            "unit":"12 months",
             "type": 1
         },
 
         {
             "planId": "P005",
-            "monthlyFee": 16,
-            "specialMonthlyFee": 0,
+            "monthlyFee": 16.00,
+            "specialMonthlyFee": 0.00,
             "specialMonth": [],
             "title": "Local Voice Plan 300mins/Month",
             "desc": "300 minutes of local voice calls,  $0.2/minute thereafter",
+            "duration": 2,
+            "unit":"24 months",
             "type": 3
         },
 
         {
             "planId": "P006",
-            "monthlyFee": 23,
-            "specialMonthlyFee": 0,
+            "monthlyFee": 23.00,
+            "specialMonthlyFee": 0.00,
             "specialMonth": [],
             "title": "Local Voice Plan 1200mins/Month",
             "desc": "1,200 minutes of local voice calls, $0.2/minute thereafter",
+            "duration": 2,
+            "unit":"24 months",
             "type": 3
         },
 
         {
             "planId": "P007",
-            "monthlyFee": 68,
-            "specialMonthlyFee": 0,
+            "monthlyFee": 68.00,
+            "specialMonthlyFee": 0.00,
             "specialMonth": [],
             "title": "Local Voice Plan 2300mins/Month",
             "desc": "2,300 minutes of local voice calls, $0.8/minute thereafter ",
+            "duration": 1,
+            "unit":"12 months",
             "type": 3
         }
     ]
