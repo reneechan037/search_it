@@ -8,5 +8,7 @@ public class Officer extends User{
 	}
 
 	public Officer(){}
-
+	public Role getRole() {
+		return r;
+	}
 }
