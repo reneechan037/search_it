@@ -42,7 +42,7 @@ public class ServicePlanManager {
         ArrayList<ServicePlan> list = new ArrayList<>();
 
         for (ServicePlan plan : plans) {
-            if (plan.getFullSpeedShareService().getLocalDataUsageAmount() >= min && plan.getFullSpeedShareService().getLocalDataUsageAmount() <= max) {
+            if (plan.getLocalDataUsageAmount() >= min && plan.getLocalDataUsageAmount() <= max) {
                 list.add(plan);
             }
         }
@@ -54,7 +54,7 @@ public class ServicePlanManager {
         ArrayList<ServicePlan> list = new ArrayList<>();
 
         for (ServicePlan plan : plans) {
-            if (plan.getExtraOffers().size() > 0) {
+            if (plan.getExtraOffer().length() > 0) {
                 list.add(plan);
             }
         }
