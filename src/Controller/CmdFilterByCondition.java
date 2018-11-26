@@ -57,7 +57,7 @@ public class CmdFilterByCondition implements Command {
                 do {
                     System.out.print("Please select (1-3): ");
                     input = in.nextLine();
-                } while (!input.equals("1") || !input.equals("2") || !input.equals("3")); // to ensure user enter correct number
+                } while (!input.equals("1") && !input.equals("2") && !input.equals("3")); // to ensure user enter correct number
                 double min, max;
                 if (input.equals("1")) {
                     min = 0;
