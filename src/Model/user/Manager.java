@@ -4,11 +4,11 @@ package Model.user;
 
 public class Manager  implements Role{
 
-	public Manager m;
+//	public Manager m;
 	
 	public Manager getRole()
 	{
-		return m;
+		return this;
 	}
 	
 	public Manager() {};
