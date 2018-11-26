@@ -128,7 +128,7 @@ public class SearchIt {
 
     }
     public static void importPLan() {
-    	ArrayList<ServicePlan> spal = new ArrayList();       
+    	ArrayList<ServicePlan> spal = new ArrayList<>();       
         try {
             JSONParser p = new JSONParser();
         	Object obj = p.parse(new FileReader("./src/PlanData.json"));
@@ -142,7 +142,7 @@ public class SearchIt {
         		for (int i2 = 0; i2 < sm.size(); ++i2) {
         			sma[i2] = (int)(((Long)sm.get(i2)).intValue());
         		}
-        	    sp = new ServicePlan((String)innobj.get("planId"),(String)innobj.get("title"),(double)innobj.get("monthlyFee"),(double)innobj.get("specialMonthlyFee"),sma,(int)(((Long)innobj.get("duration")).intValue()),(String)innobj.get("unit"),(int)(((Long)innobj.get("type")).intValue()));
+        	    sp = new ServicePlan((String)innobj.get("planId"),(String)innobj.get("title"),(double)innobj.get("monthlyFee"),(double)innobj.get("specialMonthlyFee"),sma,(int)(((Long)innobj.get("duration")).intValue()),(String)innobj.get("unit"),(String)innobj.get("localDataUsage"),(double)innobj.get("localDataUsageAmount"),(String)innobj.get("localDataUsageUnit"),(String)innobj.get("extraOffer"),(int)(((Long)innobj.get("type")).intValue()));
         	    spal.add(sp);
         	}
         	ServicePlanStorage.getInstance().setPlans(spal);

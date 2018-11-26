@@ -12,11 +12,14 @@ public class ServicePlan {
 
     private double monthlyFee;
     private double specialMonthlyFee;
+    private String localDataUsage;
+    private double localDataUsageAmount;
+    private String localDataUsageUnit;
 
     private FullSpeedShareService fullSpeedShareService;
     private AirtimeService airtimeService;
     private MessageService messageService;
-    private ArrayList<ExtraOffer> extraOffers;
+    private String extraOffer;
 
     private int planType;
     private int [] specialFeeMonth;
@@ -28,7 +31,7 @@ public class ServicePlan {
 //        extraOffers = new ArrayList<>();
     }
 
-    public ServicePlan(String pId, String name, double monthFee, double specialMonthFee, int[] specialMonth, int duration, String unit, int type)
+    public ServicePlan(String pId, String name, double monthFee, double specialMonthFee, int[] specialMonth, int duration, String unit, String localDataUsage, double localDataUsageAmount, String localDataUsageUnit, String extraOffer, int type)
     {
         this.planId = pId;
         this.name = name;
@@ -37,7 +40,11 @@ public class ServicePlan {
         this.specialFeeMonth = specialMonth;
         this.duration = duration;
         this.durationUnit = unit;
+        this.localDataUsage = localDataUsage;
+        this.localDataUsageAmount = localDataUsageAmount;
+        this.localDataUsageUnit = localDataUsageUnit;
         this.planType = type;
+        this.extraOffer = extraOffer;
         setPlanType(type);
 
     }
@@ -102,8 +109,8 @@ public class ServicePlan {
         this.messageService = messageService;
     }
 
-    public void setExtraOffers(ArrayList<ExtraOffer> extraOffers) {
-        this.extraOffers = extraOffers;
+    public void setExtraOffer(String extraOffer) {
+        this.extraOffer = extraOffer;
     }
 
     public String getName() {
@@ -112,6 +119,30 @@ public class ServicePlan {
 
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public String getLocalDataUsage() {
+        return localDataUsage;
+    }
+
+    public void setLocalDataUsage(String localDataUsage) {
+        this.localDataUsage = localDataUsage;
+    }
+
+    public double getLocalDataUsageAmount() {
+        return localDataUsageAmount;
+    }
+
+    public void setLocalDataUsageAmount(double localDataUsageAmount) {
+        this.localDataUsageAmount = localDataUsageAmount;
+    }
+
+    public String getLocalDataUsageUnit() {
+        return localDataUsageUnit;
+    }
+
+    public void setLocalDataUsageUnit(String localDataUsageUnit) {
+        this.localDataUsageUnit = localDataUsageUnit;
     }
 
     public int getDuration() {
@@ -158,7 +189,7 @@ public class ServicePlan {
         return messageService;
     }
 
-    public ArrayList<ExtraOffer> getExtraOffers() {
-        return extraOffers;
+    public String getExtraOffer() {
+        return extraOffer;
     }
 }
