@@ -10,12 +10,13 @@ import Model.Login.SearchingService;
 import Model.Manager.Response;
 import Model.service_plan.ServicePlan;
 import Model.user.Manager;
+import Model.user.Officer;
 
 public class CmdManagerAction implements Command {
-   private Manager manager;
+   private Officer manager;
 
     public CmdManagerAction() {
-        manager = Manager.getInstance();
+        manager = new Officer();
     }
 
     @Override
