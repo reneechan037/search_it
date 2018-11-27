@@ -12,6 +12,11 @@ public class Client extends User{
 		// TODO Auto-generated constructor stub
 		plans = new ArrayList<>();
 	}
+	
+	public void setPlans(ArrayList<ServicePlan> plan)
+	{
+		this.plans = plan;
+	}
 
 	public ArrayList<ServicePlan> getPlans()
 	{

@@ -1,0 +1,53 @@
+
+{
+    "servicePlan": [
+        {
+            "planId": "P001",
+            "monthlyFee": 120.00,
+            "specialMonthlyFee": 80.00,
+            "specialMonth": [1,3,4],
+            "title": "4G Supreme Service plan",
+            "desc": "Maximum local data transmission speed at 21Mbps, 3,000 minutes of local voice calls",
+            "duration": 24,
+            "unit":"months",
+            "localDataUsage":"10 GB",
+            "localDataUsageAmount":10.0,
+            "localDataUsageUnit":"GB",
+            "extraOffer":"supermarket $50 coupon",
+            "type": 1
+        },
+
+        {
+            "planId": "P002",
+            "monthlyFee": 108.00,
+            "specialMonthlyFee": 0.00,
+            "specialMonth": [],
+            "title": "4G Anytime+ Service plan",
+            "desc": "Port-in users enjoy 5GB data usage, up to 21Mbps, 128kbps thereafter, 3,000 minutes of local voice calls",
+            "duration": 12,
+            "unit":"months",
+            "localDataUsage":"5 GB",
+            "localDataUsageAmount":5.0,
+            "localDataUsageUnit":"GB",
+            "extraOffer":"",
+            "type": 1
+        },
+
+
+        {
+            "planId": "P005",
+            "monthlyFee": 16.00,
+            "specialMonthlyFee": 0.00,
+            "specialMonth": [],
+            "title": "Local Voice Plan 300mins/Month",
+            "desc": "300 minutes of local voice calls,  $0.2/minute thereafter",
+            "duration": 24,
+            "unit":"months",
+            "localDataUsage":"1 GB",
+            "localDataUsageAmount":1.0,
+            "localDataUsageUnit":"GB",
+            "extraOffer":"",
+            "type": 3
+        }
+    ]
+}
