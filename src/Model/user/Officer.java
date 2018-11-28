@@ -28,7 +28,8 @@ public class Officer extends User{
 	{
 		for (ServicePlan plan : clinet.getPlans())
 		{
-			System.out.print(plan);
+			System.out.println(plan);
+			System.out.print("");
 		}
 	}
 

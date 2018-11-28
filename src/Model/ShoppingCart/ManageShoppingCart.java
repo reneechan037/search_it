@@ -60,6 +60,9 @@ public class ManageShoppingCart {
             System.out.println("No plan were added in the shopping cart");
         }
     }
+    
+   
+    
     public void removeListByUser(User user){
         for (ShoppingCart shoppingCart : shoppingCartlist) {
             if (shoppingCart.getUser().equals(user)) {
@@ -70,10 +73,15 @@ public class ManageShoppingCart {
     }
     
     public void checkOut(User user) {
-    	if(getinstance().shoppingCartlist.size() == 0) {
+    	if(shoppingCartlist.size() == 0) {
     		System.out.println("Shopping Cart is no plan!");
     	}else {
-    		ManageOrder.getOrderinstance().addToOrderList(user, getinstance());
+    		ArrayList<ShoppingCart> ordershoppingCartlist = new ArrayList<ShoppingCart>();
+    		for(ShoppingCart sc:shoppingCartlist) {
+    			ordershoppingCartlist.add(new ShoppingCart(sc.getUser(),sc.getPlan()));
+    		}
+    		
+    		ManageOrder.getOrderinstance().addToOrderList(user, ordershoppingCartlist);
         	shoppingCartlist.clear();
         	System.out.println("Checkout success!!");
     	}

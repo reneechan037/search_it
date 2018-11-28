@@ -1,18 +1,20 @@
 package Model.Order;
 
+import java.util.ArrayList;
+
 import Model.ShoppingCart.*;
 import Model.user.*;
 
 public class Order {
 	private User user;
-	private ManageShoppingCart shoppingCart;
+	private ArrayList<ShoppingCart> shoppingCart;
 	
-	public Order(User user,ManageShoppingCart shoppingCart) {
+	public Order(User user,ArrayList<ShoppingCart> shoppingCart) {
 		this.user = user;
 		this.shoppingCart = shoppingCart;
 	}
 	
-	public ManageShoppingCart getOrder() {
+	public ArrayList<ShoppingCart> getOrder() {
 		return shoppingCart;
 	}
 	
@@ -20,7 +22,5 @@ public class Order {
 		return user;
 	}
 	
-	public void displayOrder() {
-		shoppingCart.displayShoppingCart(user);
-	}
+	
 }

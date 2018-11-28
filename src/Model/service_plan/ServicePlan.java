@@ -30,6 +30,23 @@ public class ServicePlan {
     //    messageService = new MessageService();
 //        extraOffers = new ArrayList<>();
     }
+    public ServicePlan(String pId, String name, double monthFee, double specialMonthFee, int[] specialMonth, int duration, String unit, int type)
+    {
+        this.planId = pId;
+        this.name = name;
+        this.monthlyFee = monthFee;
+        this.specialMonthlyFee = specialMonthFee;
+        this.specialFeeMonth = specialMonth;
+        this.duration = duration;
+        this.durationUnit = unit;
+        this.localDataUsage = "";
+        this.localDataUsageAmount = 0;
+        this.localDataUsageUnit = "";
+        this.planType = type;
+        this.extraOffer = "";
+        setPlanType(type);
+    }
+    
 
     public ServicePlan(String pId, String name, double monthFee, double specialMonthFee, int[] specialMonth, int duration, String unit, String localDataUsage, double localDataUsageAmount, String localDataUsageUnit, String extraOffer, int type)
     {

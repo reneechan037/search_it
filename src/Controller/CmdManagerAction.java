@@ -14,9 +14,11 @@ import Model.user.Officer;
 
 public class CmdManagerAction implements Command {
    private Officer manager;
-
+   private ArrayList<String> dummyUser;
+   
     public CmdManagerAction() {
         manager = new Officer();
+        addDummyUser();
     }
 
     @Override
@@ -463,7 +465,32 @@ public class CmdManagerAction implements Command {
     };
 
     public void checkUserPlan(Scanner in) {
+    	println("User List:");
+    	for (String s : dummyUser)
+    		println(s);
+    	
+    	println("Enter user name to check user service plan:");
+    	String cmd = in.nextLine();
+    	
+    	if (dummyUser.contains(cmd))
+    	{
+    		manager.checkUserPlan(Helper.dummyUser());
+    	}
+    	else
+    	{
+    		println("User not found!");
+    	}
     };
+    
+    public void addDummyUser()
+    {
+    	dummyUser = new ArrayList<String>();
+    	String [] users =  { "jonh"};
+    	for (String s : users)
+    	{
+    		dummyUser.add(s);
+    	}
+    }
 
     public void println(String msg) {
         System.out.println(msg);
