@@ -63,10 +63,10 @@ public class CmdManagerAction implements Command {
     public void addPlan(Scanner in) {
         println(Helper.seperateStyleString("Add Service Plan Mode"));
 
-        String title, unit;
+        String title, unit, localDataDetail, localDataUnit, extraOffer;
         double monthlyFee = 0.0;
         double specialFee = 0.0;
-        int duration = -1;
+        int duration = -1, dataAmount = -1;
         int[] specialMonth = null;
 
         int planType = -1;
@@ -173,13 +173,43 @@ public class CmdManagerAction implements Command {
                 return;
             }
         }
+        
+        print("Set plan local data amount (a digital number is requried):");
+        cmd = in.nextLine();
+        if (Helper.isNumber(cmd))
+        {
+            dataAmount = Integer.parseInt(cmd);
+            if (dataAmount <= 0)
+            {
+                println("Invalid local data amount number");
+                return;
+            }
+        }
+        
+        print("Set plan local data unit (MB/GB):");
+        cmd = in.nextLine().toLowerCase();
+        if (cmd.equals("gb") || cmd.equals("mb"))
+        {
+        	localDataUnit = cmd;
+        }
         else
         {
-            println("Invalid duration number");
+        	 println("Invalid data unit");
+             return;
+        }
+        
+        print("Set plan extra offer:");
+        cmd = in.nextLine();
+        if (cmd.length() > 0) {
+        	extraOffer = cmd;
+        } else {
+        	println("Invalid extra offer");
             return;
         }
+        
+        localDataDetail = dataAmount + " " + localDataUnit;
 
-        ServicePlan newPlan = new ServicePlan(planId, title, monthlyFee, specialFee, specialMonth, duration, unit, planType);
+        ServicePlan newPlan = new ServicePlan(planId, title, monthlyFee, specialFee, specialMonth, duration, unit, localDataDetail, dataAmount, localDataUnit, extraOffer, planType);
         boolean isSuccess = manager.addPlan(newPlan);
 
         if (isSuccess)
@@ -346,8 +376,60 @@ public class CmdManagerAction implements Command {
                     return;
                 }
             }
+            
+            print("Update plan local data amount (a digital number is requried, Press S to Skip):");
+            cmd = in.nextLine();
+            int newDataAmount = -1;
+            if (!isSkip(cmd)) 
+            {
+                if (Helper.isNumber(cmd))
+                {
+                	newDataAmount = Integer.parseInt(cmd);
+                    // oldPlan.setDuration(newDuration);
+                }
+                else
+                {
+                    println("Invalid local data amount number");
+                    return;
+                }
+            }
+            
+            print("Update plan local data unit (MB/GB, Press S to Skip):");
+            cmd = in.nextLine();
+            String newDataUnit = "";
+            if (!isSkip(cmd)) 
+            {
+                if (cmd.equals("gb") || cmd.equals("mb"))
+                {
+                    newDataUnit = oldPlan.getLocalDataUsageUnit();
+                    // oldPlan.setDurationUnit(newUnit);
+                }
+                else
+                {
+                    println("Invalid local data unit");
+                    return;
+                }
+            }
+            String newDataDetail = newDataAmount + " " + newDataUnit;
+            
+            print("Set plan extra offer (Press S to Skip):");
+            cmd = in.nextLine();
+            String newExtraOffer = "";
+            if (!isSkip(cmd)) 
+            {
+                if (cmd.length() > 0)
+                {
+                	newExtraOffer = oldPlan.getLocalDataUsageUnit();
+                    // oldPlan.setDurationUnit(newUnit);
+                }
+                else
+                {
+                	println("Invalid extra offer");
+                    return;
+                }
+            }
 
-            ServicePlan newPlan = new ServicePlan(planId, newTitle, newMonthFee, newSpecialFee, newSpecialMonth, newDuration, newUnit, newPlanType);
+            ServicePlan newPlan = new ServicePlan(planId, newTitle, newMonthFee, newSpecialFee, newSpecialMonth, newDuration, newUnit, newDataDetail, newDataAmount, newDataUnit, newExtraOffer, newPlanType);
             boolean isSuccess = manager.updatePlan(oldPlan, newPlan);
 
             if (isSuccess)

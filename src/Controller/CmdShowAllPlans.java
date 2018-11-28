@@ -17,7 +17,10 @@ public class CmdShowAllPlans implements Command {
         if (plans.size() == 0)
             System.out.println("No plan found");
         for (ServicePlan plan : plans) {
-            System.out.println(plan.getPlanId() + " : " + plan.getName() + " - " + plan.getSpecialMonthlyFee());
+        	if (plan.getSpecialMonthlyFee() != 0)
+                System.out.println(plan.getPlanId() + " : " + plan.getName() + " - " + plan.getSpecialMonthlyFee());
+            else
+                System.out.println(plan.getPlanId() + " : " + plan.getName() + " - " + plan.getMonthlyFee());
         }
 
         String input;

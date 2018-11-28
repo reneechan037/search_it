@@ -25,20 +25,20 @@ public class CmdShowPlanDetails implements Command {
 
         if (response.getResult()) {
             String input;
+            ServicePlan plan = response.getServicePlan();
+            System.out.println("Plan ID: " + plan.getPlanId());
+            System.out.println("Plan Name: " + plan.getName());
+            if (plan.getSpecialMonthlyFee() != 0)
+            	System.out.println("Special Monthly Fee: " + plan.getSpecialMonthlyFee());
+            else
+            	System.out.println("Monthly Fee: " + plan.getMonthlyFee());
+            System.out.println("Duration: " + plan.getDuration() + " " + plan.getDurationUnit());
+            System.out.println("Local Data Usage: " + plan.getLocalDataUsage());
+            System.out.println("Extra Offer: " + plan.getExtraOffer());
             System.out.println("Back: 0 | Add to cart: 1");
             input = in.nextLine();
             if (input.equals("1")) {
-                int result=0;
-                for (ServicePlan plan : ServicePlanStorage.getInstance().getPlans()) {
-                    if (plan.getPlanId().equals(cmdParts[0])) {
-                        ManageShoppingCart.getinstance().addToShoppingCart(Cache.getInstance().getUser(), plan);
-                        result=1;
-                        break;
-                    }
-                }
-                if(result!=1){
-                    System.out.println("Plan not found");
-                }
+                ManageShoppingCart.getinstance().addToShoppingCart(Cache.getInstance().getUser(), plan);
             }
         } else {
             System.out.println(response.getDescription());
