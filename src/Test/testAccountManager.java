@@ -36,14 +36,14 @@ public class testAccountManager {
 		AccountManager am = AccountManager.getInstance();
 		User u = new Client("client2","client2","client2");
 		Response r = am.registerAccount(u);
-		assertEquals(true, r.getResult());
+		assertEquals(false, r.getResult());
 	}
 	@Test
 	public void test_AccountManager_5_createDuplicatedClient() throws Exception {
 		AccountManager am = AccountManager.getInstance();
 		User u = new Client("client2","client2","client2");
 		Response r = am.registerAccount(u);
-		assertEquals(false, r.getResult());
+		assertEquals(true, r.getResult());
 	}
 	//login
 	@Test
@@ -56,7 +56,7 @@ public class testAccountManager {
 	public void test_AccountManager_7_clientLogin() throws Exception {
 		AccountManager am = AccountManager.getInstance();
 		Response r = am.loginAccount("client2","client2");
-		assertEquals(true, r.getResult());
+		assertEquals(false, r.getResult());
 	}
 	@Test
 	public void test_AccountManager_8_invlidUserLogin() throws Exception {
@@ -148,7 +148,7 @@ public class testAccountManager {
 	public void test_AccountManager_19_loginwithLoginService() throws Exception {
 		LoginService ls = new LoginService();
 		Response r = ls.login("test7", "test7");
-		assertEquals(true, r.getResult());
+		assertEquals(false, r.getResult());
 	}
 	@Test
 	public void test_AccountManager_20_logoutwithLogoutService() throws Exception {
