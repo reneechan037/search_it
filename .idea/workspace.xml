@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0ec46cb3-843d-486f-b472-19788bad1391" name="Default Changelist" comment="handle class structure;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helper/Helper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/user/Officer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/user/Officer.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -10,28 +12,6 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/Controller/CmdFilterByCondition.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="764">
-                    <caret line="98" column="27" selection-start-line="98" selection-start-column="16" selection-end-line="98" selection-end-column="27" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-465732885">
@@ -76,7 +56,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/CmdLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="209">
               <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -112,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/CmdShowAllPlans.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+            <state relative-caret-position="494">
+              <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -147,8 +127,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/CmdShowPlanDetails.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+            <state relative-caret-position="570">
+              <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -171,7 +151,7 @@
         <entry file="file://$PROJECT_DIR$/src/SearchIt.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
-              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -221,8 +201,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1450" />
-    <option name="y" value="495" />
+    <option name="x" value="-1448" />
+    <option name="y" value="497" />
     <option name="width" value="1455" />
     <option name="height" value="1195" />
   </component>
@@ -251,6 +231,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -325,8 +307,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -350,18 +330,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.classpath</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/gantt/gantt.gan</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Controller/CmdManagerAction.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Controller/CmdShowShoppingCart.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/ShoppingCart/ManageShoppingCart.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/service_plan/ServicePlan.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/user/Manager.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/user/Officer.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/user/Staff.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/PlanData.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/SearchIt.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -369,40 +339,11 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_084d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_085d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_086d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_087d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_088d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_089d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_090d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_091d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_092d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_093f</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_094d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_095d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_096d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_097d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_098d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_099d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_100d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_101d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_102d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_103d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_104d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_105d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_106d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_107d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_108d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_109d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_110d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_111d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_112d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_113d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/project plan.docx</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/tasklist.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/json-simple-1.1.jar</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Helper/Helper.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Test/ManageOrderTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Test/ManageShoppingCartTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Test/SearchingServiceTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Test/ServicePlanManagerTest.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Test/testAccountManager.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -410,36 +351,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_028d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_029d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_030d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_031f</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_032d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_033d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_034d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_035d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_036d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_037d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_038d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_039d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_040d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_041d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_042d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_043d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_044d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_045d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_046d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_047d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_048d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_049d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_050d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_051d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_052d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_053d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_054d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_055d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_056d</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/diagram/CS3343_project.vpp.bak_057d</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Controller/CmdCheckout.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -641,10 +553,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1448" y="221" width="1164" height="956" extended-state="0" />
+    <frame x="-1446" y="223" width="1164" height="956" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.23641305" />
+      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.24547102" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -755,9 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="11" column="13" lean-forward="true" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -794,9 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -804,12 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#247#248#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-            <element signature="e#319#320#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -817,10 +717,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-          <folding>
-            <element signature="e#284#285#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -828,16 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1239">
           <caret line="88" column="32" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
-          <folding>
-            <element signature="e#2049#2050#0" expanded="true" />
-            <element signature="e#2080#2081#0" expanded="true" />
-            <element signature="e#2123#2124#0" expanded="true" />
-            <element signature="e#2161#2162#0" expanded="true" />
-            <element signature="e#2194#2195#0" expanded="true" />
-            <element signature="e#2223#2224#0" expanded="true" />
-            <element signature="e#2277#2278#0" expanded="true" />
-            <element signature="e#2322#2323#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -870,8 +756,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CmdShowAllPlans.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        <state relative-caret-position="494">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -899,8 +785,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CmdShowPlanDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+        <state relative-caret-position="570">
+          <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -918,7 +804,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CmdLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="209">
           <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -930,16 +816,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="764">
           <caret line="98" column="27" selection-start-line="98" selection-start-column="16" selection-end-line="98" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SearchIt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
         </state>
       </provider>
     </entry>

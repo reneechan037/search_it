@@ -24,27 +24,40 @@ public class Officer extends User{
 		return r;
 	}
 	
-	public void checkUserPlan(Client clinet)
+	public boolean checkUserPlan(Client client)
 	{
-		for (ServicePlan plan : clinet.getPlans())
+		for (ServicePlan plan : client.getPlans())
 		{
 			System.out.println(plan);
 			System.out.print("");
 		}
+		if (client.getPlans().size() > 0)
+			return true;
+		else
+			return false;
 	}
 
 	public boolean addPlan(ServicePlan plan)
 	{
 		ArrayList<ServicePlan> plans = ServicePlanStorage.getInstance().getPlans();
+		for (ServicePlan cPlan : plans) {
+			if (cPlan.getPlanId().equals(plan.getPlanId()))
+				return false;
+		}
 		return plans.add(plan);
 	}
 
 	public boolean updatePlan(ServicePlan oldPlan, ServicePlan newPlan)
 	{
-
+		if (!oldPlan.getPlanId().equals(newPlan.getPlanId()))
+			return false;
 		try {
 			ArrayList<ServicePlan> plans = ServicePlanStorage.getInstance().getPlans();
-			int index = plans.indexOf(oldPlan);
+			int index = -1;
+			for (int i = 0; i < plans.size(); i ++) {
+				if (plans.get(i).getPlanId().equals(oldPlan.getPlanId()))
+					index = i;
+			}
 			plans.set(index, newPlan);
 			return true;
 		} catch (Exception e) {
