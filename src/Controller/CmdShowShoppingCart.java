@@ -25,7 +25,7 @@ public class CmdShowShoppingCart implements Command {
             if (input.equals("0")){
                 wantToBack = true;
             } else if(input.equals("c")){
-            	(new CmdCheckout()).execute(new String[0], in);
+            	ManageShoppingCart.getinstance().checkOut(Cache.getInstance().getUser());
             } else {
                 try{
                  ManageShoppingCart.getinstance().deleteToShoppingCart(Cache.getInstance().getUser(),Integer.parseInt(input));

@@ -18,14 +18,16 @@ public class ManageShoppingCart {
         shoppingCartlist = new ArrayList<>();
     }
 
-    public void addToShoppingCart(User user, ServicePlan plan) {
+    public boolean addToShoppingCart(User user, ServicePlan plan) {
 
         shoppingCartlist.add(new ShoppingCart(user, plan));
         System.out.println("Added success!!");
+        
+        return true;
 
     }
 
-    public void deleteToShoppingCart(User user, int number) {
+    public boolean deleteToShoppingCart(User user, int number) {
         int num = 0;
         boolean success=false;
         for (ShoppingCart shoppingCart : shoppingCartlist) {
@@ -44,9 +46,10 @@ public class ManageShoppingCart {
         }else{
             System.out.println("No this plan");
         }
+        return true;
     }
 
-    public void displayShoppingCart(User user) {
+    public boolean displayShoppingCart(User user) {
         int num = 1;
         for (ShoppingCart shoppingCart : shoppingCartlist) {
             if (shoppingCart.getUser().equals(user)) {
@@ -59,20 +62,13 @@ public class ManageShoppingCart {
         if(num==1){
             System.out.println("No plan were added in the shopping cart");
         }
-    }
-    
-   
-    
-    public void removeListByUser(User user){
-        for (ShoppingCart shoppingCart : shoppingCartlist) {
-            if (shoppingCart.getUser().equals(user)) {
-               shoppingCartlist.remove(shoppingCart);
-            }
-        }
         
+        return true;
     }
     
-    public void checkOut(User user) {
+
+    
+    public boolean checkOut(User user) {
     	if(shoppingCartlist.size() == 0) {
     		System.out.println("Shopping Cart is no plan!");
     	}else {
@@ -85,6 +81,7 @@ public class ManageShoppingCart {
         	shoppingCartlist.clear();
         	System.out.println("Checkout success!!");
     	}
+    	return true;
     }
 
 }
