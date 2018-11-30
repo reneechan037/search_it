@@ -35,19 +35,22 @@ public class ManageOrder {
 			System.out.println("You didn't have any order record!");
 			return true;
 		}
+		printOrder(orderlistByUser);
+
+		return true;
+	}
+	
+	public void printOrder(ArrayList<Order> orderlistByUser) {
 		int num = 1;
 		for(Order order: orderlistByUser) {
 			 for (ShoppingCart shoppingCart : order.getOrder()) {
 				 System.out.println(num + ". " + shoppingCart.getPlan().getName());
 		         System.out.println("Duration: " + shoppingCart.getPlan().getDuration() + " " + shoppingCart.getPlan().getDurationUnit());
-		         System.out.println("");
 		         num++;
 		            
 		       }
 			
 		}
-
-		return true;
 	}
 	
 
