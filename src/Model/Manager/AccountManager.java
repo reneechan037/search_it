@@ -5,6 +5,7 @@ import Model.user.Manager;
 import Model.user.Officer;
 import Model.user.Staff;
 import Model.user.User;
+import Model.user.Client;
 
 import java.util.ArrayList;
 
@@ -22,6 +23,7 @@ public class AccountManager {
         loggedOnUserList = new ArrayList<>();
         User manager = new Officer("admin", "admin", "admin", new Manager());
         User staff = new Officer("staff", "staff", "staff", new Staff());
+        User user = new Client("user","user","user");
         userList.add(manager);
         userList.add(staff);
     }
