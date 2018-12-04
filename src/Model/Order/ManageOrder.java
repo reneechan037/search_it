@@ -36,11 +36,12 @@ public class ManageOrder {
 			return true;
 		}
 		printOrder(orderlistByUser);
-
+		
 		return true;
 	}
 	
 	public void printOrder(ArrayList<Order> orderlistByUser) {
+		
 		int num = 1;
 		for(Order order: orderlistByUser) {
 			 for (ShoppingCart shoppingCart : order.getOrder()) {
@@ -52,6 +53,8 @@ public class ManageOrder {
 			
 		}
 	}
+	
+
 	
 
 }
