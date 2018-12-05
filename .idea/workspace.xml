@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ec46cb3-843d-486f-b472-19788bad1391" name="Default Changelist" comment="handle class structure;">
+    <list default="true" id="0ec46cb3-843d-486f-b472-19788bad1391" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Helper/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helper/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/user/Officer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/user/Officer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/group4_Self-Assessment_Report.docx" beforeDir="false" afterPath="$PROJECT_DIR$/doc/group4_Self-Assessment_Report.docx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,22 +16,23 @@
     <session id="-465732885">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="2" />
           <entry key="project.open.time.22" value="2" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="AccountManager" value="1" />
-          <entry key="java" value="79" />
+          <entry key="java" value="80" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="79" />
+          <entry key="JAVA" value="80" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -40,13 +40,13 @@
         <counts>
           <entry key="AccountManager" value="29" />
           <entry key="java" value="11776" />
-          <entry key="txt" value="232" />
+          <entry key="txt" value="291" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="11776" />
-          <entry key="PLAIN_TEXT" value="261" />
+          <entry key="PLAIN_TEXT" value="320" />
         </counts>
       </usages-collector>
     </session>
@@ -69,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/src/Model/Manager/AccountManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
-              <caret line="28" column="45" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="45" />
+              <caret line="30" column="45" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -147,11 +147,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SearchIt.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
               <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Helper/Helper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -201,8 +210,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1448" />
-    <option name="y" value="497" />
+    <option name="x" value="-1449" />
+    <option name="y" value="496" />
     <option name="width" value="1455" />
     <option name="height" value="1195" />
   </component>
@@ -231,8 +240,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,6 +259,12 @@
               <item name="search_it" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="search_it" type="b2602c69:ProjectViewProjectNode" />
+              <item name="search_it" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Helper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="search_it" type="b2602c69:ProjectViewProjectNode" />
@@ -330,8 +345,13 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Controller/CmdShowShoppingCart.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/ShoppingCart/ManageShoppingCart.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.DS_Store</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.project</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/project plan.docx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/.DS_Store</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/.DS_Store</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/Manager/AccountManager.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/Order/ManageOrder.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -339,11 +359,18 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Test/ManageOrderTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Test/ManageShoppingCartTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Test/SearchingServiceTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Test/ServicePlanManagerTest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Test/testAccountManager.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/.DS_Store</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/CS3343_ActivityLog_TimeSheet_Project_group4.xlsx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/README.txt.docx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/group4_Self-Assessment_Report.docx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/group4_Summary.docx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/group4_analysis_design_report.docx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/group4_execuable_test_code.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/group4_executable_code.docx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/group4_presentation.pptx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/group4_project_plan.docx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/group4_test case for project.xlsx</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/doc/group4_test report.docx</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -351,7 +378,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Controller/CmdCheckout.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -549,14 +575,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541925169198</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="update class and create testing class for manager action;">
+      <created>1543519770386</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1543519770386</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1446" y="223" width="1164" height="956" extended-state="0" />
+    <frame x="-1447" y="222" width="1164" height="956" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.24547102" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -573,7 +606,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32846716" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.32806805" />
+      <window_info anchor="bottom" id="Messages" order="10" visible="true" weight="0.32806805" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -596,7 +629,8 @@
     <MESSAGE value="handle searching condition and show plan details;" />
     <MESSAGE value="ide config;" />
     <MESSAGE value="handle class structure;" />
-    <option name="LAST_COMMIT_MESSAGE" value="handle class structure;" />
+    <MESSAGE value="update class and create testing class for manager action;" />
+    <option name="LAST_COMMIT_MESSAGE" value="update class and create testing class for manager action;" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Model/Manager/AccountManager" />
@@ -734,10 +768,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/CmdFilterByCondition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="764">
+          <caret line="98" column="27" selection-start-line="98" selection-start-column="16" selection-end-line="98" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/CmdLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Manager/AccountManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
-          <caret line="28" column="45" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="45" />
+          <caret line="30" column="45" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -802,27 +853,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/CmdLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/CmdFilterByCondition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="764">
-          <caret line="98" column="27" selection-start-line="98" selection-start-column="16" selection-end-line="98" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SearchIt.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helper/Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
